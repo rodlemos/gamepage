@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply flex bg-slate-900 text-gray-200;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body {
+  @apply min-h-screen;
+}
+
+#__next {
+  @apply flex flex-1 flex-col
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-neutral-300/[0.9];
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-red-500;
+}
+
+a {
+  @apply cursor-pointer
+}
