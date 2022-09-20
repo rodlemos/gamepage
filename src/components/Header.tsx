@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from '../assets/logo.png';
 import avatar from '../assets/avatar.svg';
 import { Searchbar } from './Searchbar';
@@ -7,17 +8,19 @@ export function Header() {
   return (
     <header className="w-full bg-gradient-to-r from-gray-700 to-slate-700 px-4 py-3 shadow-sm shadow-gray-700 z-10">
       <div className="mx-auto flex justify-between items-center max-w-screen-xl">
-        <a className="flex items-center">
-          <Image
-            src={logo}
-            width={52}
-            height={42}
-            className="drop-shadow-[0_0_2px_SteelBlue]"
-          />
-          <span className="hidden lg:inline text-lg text-white font-bold drop-shadow-[0_0_3px_SteelBlue]">
-            perienced
-          </span>
-        </a>
+        <Link href="/" passHref>
+          <a className="flex items-center">
+            <Image
+              src={logo}
+              width={52}
+              height={42}
+              className="drop-shadow-[0_0_2px_SteelBlue]"
+            />
+            <span className="hidden lg:inline text-lg text-white font-bold drop-shadow-[0_0_3px_SteelBlue]">
+              perienced
+            </span>
+          </a>
+        </Link>
 
         <div className="flex flex-1 justify-center items-center gap-4">
           <Searchbar />
@@ -25,19 +28,25 @@ export function Header() {
           <nav className="hidden md:block">
             <ul className="flex gap-4">
               <li>
-                <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
-                  Champions
-                </a>
+                <Link href="/" passHref>
+                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                    Champions
+                  </a>
+                </Link>
               </li>
               <li>
-                <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
-                  Guides
-                </a>
+                <Link href="/guides" passHref>
+                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                    Guides
+                  </a>
+                </Link>
               </li>
               <li>
-                <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
-                  Tutorials
-                </a>
+                <Link href="/tutorials" passHref>
+                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                    Tutorials
+                  </a>
+                </Link>
               </li>
             </ul>
           </nav>

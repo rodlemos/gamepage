@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex flex-1 items-start">
-        <main className="container my-10 mx-auto">
-          <Slider />
+      <main className="my-10 mx-auto flex-1">
+        <Slider />
 
-          <section className="mt-16 max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold text-center ml-4 xl:text-left">
-              Latest Tutorials:
+        <section className="mt-16 max-w-5xl mx-auto p-2 xl:p-0">
+          <div className="bg-slate-800 rounded-md p-4">
+            <h1 className="text-2xl font-bold text-center xl:text-left">
+              Latest turotials:
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 my-8">
               <FeatureCard />
@@ -26,11 +26,13 @@ export default function Home() {
             <div className="flex justify-center">
               <PrimaryButton title="View all Tutorial" />
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="my-8 max-w-5xl mx-auto">
+        <section className="my-8 max-w-5xl mx-auto p-2 xl:p-0">
+          <div className="bg-slate-800 rounded-md p-4">
             <h1 className="text-2xl font-bold text-center xl:text-left">
-              New Guides:
+              Newest guides:
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 my-8">
               <Card image="http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/Syndra.png" />
@@ -43,9 +45,9 @@ export default function Home() {
             <div className="flex justify-center">
               <PrimaryButton title="View all guides" />
             </div>
-          </section>
-        </main>
-      </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   );
