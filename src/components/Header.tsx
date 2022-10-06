@@ -6,7 +6,7 @@ import { Searchbar } from './Searchbar';
 
 export function Header() {
   return (
-    <header className="w-full bg-gradient-to-r from-gray-700 to-slate-700 px-4 py-3 shadow-sm shadow-gray-700 z-10">
+    <header className="relative w-full bg-gradient-to-r from-gray-700 to-slate-700 px-4 py-3 shadow-sm shadow-gray-700 z-10">
       <div className="mx-auto flex justify-between items-center max-w-screen-xl">
         <Link href="/" passHref>
           <a className="flex items-center">
@@ -25,25 +25,25 @@ export function Header() {
         <div className="flex flex-1 justify-center items-center gap-4">
           <Searchbar />
 
-          <nav className="hidden md:block">
+          <nav className="absolute flex items-center justify-center md:inline-block w-full md:w-auto py-1 md:p-0 top-[65px] left-0 md:static bg-slate-600 md:bg-transparent">
             <ul className="flex gap-4">
               <li>
                 <Link href="/" passHref>
-                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                  <a className="text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
                     Champions
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/guides" passHref>
-                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                  <a className="text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
                     Guides
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/tutorials" passHref>
-                  <a className="font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
+                  <a className="text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300">
                     Tutorials
                   </a>
                 </Link>

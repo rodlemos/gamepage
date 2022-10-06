@@ -1,23 +1,33 @@
 import { HiOutlineHeart } from 'react-icons/hi';
-import { roles } from '../data';
 
-export function TutorialCard() {
+interface Props {
+  video_id: string;
+  title: string;
+  role?: {
+    image_url: string;
+  };
+}
+
+export function TutorialCard({ title, video_id, role }: Props) {
   return (
-    <div className="p-2 lg:p-4 bg-slate-700 rounded-sm">
+    <div className="p-2 lg:p-4 bg-slate-700 rounded-sm hover:brightness-110 transition-colors duration-300">
       <img
-        src="https://img.youtube.com/vi/Ng6LSYpPbAA/maxresdefault.jpg"
+        src={`https://img.youtube.com/vi/${video_id}/maxresdefault.jpg`}
         alt=""
-        className="w-[300px] xl:w-80 aspect-video"
+        className="w-full aspect-video"
       />
 
       <div className="py-4 flex justify-between items-center">
-        <div>
+        {role && (
           <img
-            src={roles[2].image}
+            src={role?.image_url}
             alt=""
             className="w-7 h-7 grayscale mr-2 inline"
           />
-          <h2 className="inline font-bold">Super easy win</h2>
+        )}
+
+        <div className="flex-1">
+          <h2 className="inline font-bold text-amber-300">{title}</h2>
         </div>
 
         <HiOutlineHeart

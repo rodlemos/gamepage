@@ -1,6 +1,31 @@
-export function Filters() {
+import { useState } from 'react';
+
+interface Props {
+  roles: {
+    id: string;
+    name: string;
+    image_url: string;
+  }[];
+  category: string;
+  setCategory: (category: string) => void;
+}
+
+export function Filters({ roles, category, setCategory }: Props) {
+  const [value, setValue] = useState(null);
+
+  function handleChangeCategory(index: number, role_id: string) {
+    setValue(index);
+
+    if (role_id === category) {
+      setValue(null);
+      return setCategory('');
+    }
+
+    setCategory(role_id);
+  }
+
   return (
-    <nav className="flex gap-4 items-center flex-wrap py-2 mx-auto">
+    <nav className="flex gap-4 items-center flex-wrap mx-auto">
       <div className="flex gap-2 w-full max-w-sm items-center">
         <span className="leading-none font-semibold text-gray-300">
           Champion
@@ -13,44 +38,30 @@ export function Filters() {
         </div>
       </div>
 
-      <ul className="flex justify-center items-center gap-4">
+      <ul className="flex justify-center items-center gap-2 md:gap-4">
         <span className="leading-none font-semibold text-gray-300">Roles:</span>
-        <li>
-          <img
-            src="https://github.com/esports-bits/lol_images/blob/master/role_lane_icons/TOP.png?raw=true"
-            alt=""
-            className="w-7 h-7"
-          />
-        </li>
-        <li>
-          <img
-            src="https://github.com/esports-bits/lol_images/blob/master/role_lane_icons/JUNGLE.png?raw=true"
-            alt=""
-            className="w-7 h-7"
-          />
-        </li>
-        <li>
-          <img
-            src="https://github.com/esports-bits/lol_images/blob/master/role_lane_icons/MIDDLE.png?raw=true"
-            alt=""
-            className="w-7 h-7"
-          />
-        </li>
-        <li>
-          <img
-            src="https://github.com/esports-bits/lol_images/blob/master/role_lane_icons/ADC.png?raw=true"
-            alt=""
-            className="w-7 h-7"
-          />
-        </li>
-
-        <li>
-          <img
-            src="https://github.com/esports-bits/lol_images/blob/master/role_lane_icons/SUPPORT.png?raw=true"
-            alt=""
-            className="w-7 h-7"
-          />
-        </li>
+        {roles?.map((role, index) => (
+          <li
+            key={role.id}
+            className="flex md:gap-1 md:items-center group cursor-pointer"
+            onClick={() => handleChangeCategory(index, role.id)}
+          >
+            <img
+              src={role.image_url}
+              alt={role.name}
+              className={`w-7 h-7 ${
+                value === index && 'hue-rotate-180 md:hue-rotate-0'
+              }`}
+            />
+            <span
+              className={`hidden md:inline-block text-sm text-gray-400 uppercase group-hover:text-rose-500 ${
+                value === index && 'text-rose-500'
+              }`}
+            >
+              {role.name}
+            </span>
+          </li>
+        ))}
       </ul>
     </nav>
   );
