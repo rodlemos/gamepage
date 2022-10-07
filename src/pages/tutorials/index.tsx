@@ -1,10 +1,16 @@
+import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { TutorialCard } from '../../components/TutorialCard';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { api, getFromApi } from '../../services/api';
-import { useQuery } from '@tanstack/react-query';
+import { getFromApi } from '../../services/api';
+
+type rolesData = {
+  id: string;
+  name: string;
+  image_url: string;
+};
 
 export default function Tutorials() {
   const [tutorials, setTutorials] = useState([]);
@@ -54,7 +60,7 @@ export default function Tutorials() {
           <div className="min-h-[500px] bg-slate-800 rounded-md p-4">
             <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-start">
               <ul className="flex justify-center gap-1 w-full max-w-max lg:flex-col">
-                {roles.data?.map((role, index) => (
+                {roles.data?.map((role: rolesData, index: number) => (
                   <li
                     key={role.id}
                     className="flex gap-1 items-center bg-slate-700 p-2 rounded-sm lg:w-44 group cursor-pointer"
@@ -68,7 +74,7 @@ export default function Tutorials() {
                       }`}
                     />
                     <span
-                      className={`hidden md:inline font-semibold group-hover:text-rose-500 ${
+                      className={`hidden md:inline font-semibold uppercase group-hover:text-rose-500 ${
                         index === value && 'text-rose-500'
                       }`}
                     >

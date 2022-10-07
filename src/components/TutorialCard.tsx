@@ -10,24 +10,24 @@ interface Props {
 
 export function TutorialCard({ title, video_id, role }: Props) {
   return (
-    <div className="p-2 lg:p-4 bg-slate-700 rounded-sm hover:brightness-110 transition-colors duration-300">
+    <div className="h-full p-2 lg:p-4 bg-slate-700 rounded-sm hover:brightness-110 transition-colors duration-300">
       <img
         src={`https://img.youtube.com/vi/${video_id}/maxresdefault.jpg`}
         alt=""
         className="w-full aspect-video"
       />
 
-      <div className="py-4 flex justify-between items-center">
+      <div className="py-4 flex justify-between items-start">
         {role && (
           <img
             src={role?.image_url}
             alt=""
-            className="w-7 h-7 grayscale mr-2 inline"
+            className="w-7 h-7 mr-2 inline opacity-80"
           />
         )}
 
         <div className="flex-1">
-          <h2 className="inline font-bold text-amber-300">{title}</h2>
+          <h2 className="inline font-bold">{title}</h2>
         </div>
 
         <HiOutlineHeart

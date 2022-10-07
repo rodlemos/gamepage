@@ -8,8 +8,30 @@ import { GuideCard } from '../../components/GuideCard';
 import { Header } from '../../components/Header';
 import { getFromApi } from '../../services/api';
 
+interface Guides {
+  id: string;
+  title: string;
+  slug: string;
+  champion: {
+    image_url: string;
+  };
+  items: {
+    item: {
+      id: string;
+      name: string;
+      image_url: string;
+    };
+  }[];
+  role: {
+    id: string;
+    name: string;
+    image_url: string;
+  };
+  updated_at: Date;
+}
+
 export default function Guides() {
-  const [guides, setGuides] = useState([]);
+  const [guides, setGuides] = useState<Guides[]>([]);
   const [category, setCategory] = useState('');
   const roles = useQuery(['roles'], () => getFromApi('/roles'), {
     staleTime: 1000 * 60 * 60 * 24,
@@ -28,9 +50,11 @@ export default function Guides() {
         return setGuides(allGuides.data);
       }
 
-      const filteredGuides = allGuides.data.filter((item) => {
-        return item.role.id === category;
-      });
+      const filteredGuides = allGuides.data.filter(
+        (item: { role: { id: string } }) => {
+          return item.role.id === category;
+        }
+      );
 
       setGuides(filteredGuides);
     }
