@@ -18,6 +18,7 @@ export function Header() {
               width={52}
               height={42}
               className="drop-shadow-[0_0_2px_SteelBlue]"
+              alt="Page logo in X shape"
             />
             <span className="hidden lg:inline text-lg text-white font-bold drop-shadow-[0_0_3px_SteelBlue]">
               perienced
@@ -72,7 +73,7 @@ export function Header() {
             Amelina G.
           </span>
           <div className="grid place-items-center w-10 h-10 bg-zinc-300 rounded-full border-2 border-slate-400">
-            <Image src={avatar} width={30} height={30} />
+            <Image src={avatar} width={30} height={30} alt="Profile avatar" />
           </div>
         </div>
       </div>
