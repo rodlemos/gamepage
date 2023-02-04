@@ -8,12 +8,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,body {
+body::-webkit-scrollbar {
+  @apply bg-zinc-800 w-2;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-rose-700;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  @apply bg-rose-600;
+}
+
+html,
+body {
   @apply min-h-screen;
 }
 
 #__next {
-  @apply flex flex-1 flex-col
+  @apply flex flex-1 flex-col;
 }
 
 .swiper-pagination-bullet {
@@ -25,5 +38,5 @@ html,body {
 }
 
 a {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }

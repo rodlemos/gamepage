@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -5,8 +7,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from './Button';
 
 export function Slider() {
+  const router = useRouter();
+
+  function handleRedirect(path: string) {
+    router.push(path);
+  }
+
   return (
-    <div className="max-w-5xl max-h-[576px] mx-auto ring-4 ring-cyan-700/[0.3]">
+    <div className="max-w-5xl aspect-video mx-auto ring-4 ring-cyan-700/[0.3]">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{
@@ -35,6 +43,9 @@ export function Slider() {
                   bg="bg-lime-900"
                   border="border-lime-500"
                   title="View guide"
+                  onClick={() =>
+                    handleRedirect('/guides/Shocking-good-with-Zeri')
+                  }
                 />
               </div>
             </div>
@@ -58,13 +69,21 @@ export function Slider() {
                 bg="bg-indigo-900"
                 border="border-indigo-500"
                 title="View guide"
+                onClick={() => handleRedirect('guides/Udyr-going-wild')}
               />
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="realtive w-full aspect-video max-h-[579px] bg-[url('https://img.youtube.com/vi/Ng6LSYpPbAA/maxresdefault.jpg')] bg-cover" />
+          <Link
+            href="/tutorials/This-1-Simple-Rule-STOPS-You-From-DYING"
+            legacyBehavior
+          >
+            <a>
+              <div className="realtive w-full aspect-video max-h-[579px] bg-[url('https://img.youtube.com/vi/xnedGgS5jsU/maxresdefault.jpg')] bg-cover" />
+            </a>
+          </Link>
         </SwiperSlide>
       </Swiper>
     </div>

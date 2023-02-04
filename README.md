@@ -1,4 +1,5 @@
 # Game page project
+
 Front-End project using Tailwind CSS 
 The goal of this project is to learn how to use Tailwind CSS for styling in React with Next.js.
 
@@ -13,4 +14,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
