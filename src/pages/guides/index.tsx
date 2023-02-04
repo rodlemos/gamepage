@@ -81,7 +81,11 @@ export default function Guides() {
 
             <div className="flex flex-1 flex-col gap-2 h-full">
               {guides?.map((guide) => (
-                <Link href={`/guides/${guide.slug}`} key={guide.id}>
+                <Link
+                  href={`/guides/${guide.slug}`}
+                  key={guide.id}
+                  legacyBehavior
+                >
                   <a>
                     <GuideCard
                       date={guide.updated_at}

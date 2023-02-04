@@ -90,6 +90,7 @@ export default function Tutorials() {
                     href={`/tutorials/${tutorial.slug}`}
                     passHref
                     key={tutorial.id}
+                    legacyBehavior
                   >
                     <a>
                       <TutorialCard

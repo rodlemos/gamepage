@@ -76,9 +76,12 @@ export function Slider() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link href="/tutorials/This-1-Simple-Rule-STOPS-You-From-DYING">
+          <Link
+            href="/tutorials/This-1-Simple-Rule-STOPS-You-From-DYING"
+            legacyBehavior
+          >
             <a>
-              <div className="realtive w-full aspect-video max-h-[579px] bg-[url('https://img.youtube.com/vi/jTQpV2sqLRc/maxresdefault.jpg')] bg-cover" />
+              <div className="realtive w-full aspect-video max-h-[579px] bg-[url('https://img.youtube.com/vi/xnedGgS5jsU/maxresdefault.jpg')] bg-cover" />
             </a>
           </Link>
         </SwiperSlide>

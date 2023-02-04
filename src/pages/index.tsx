@@ -34,7 +34,11 @@ export default function Home() {
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 my-8">
               {tutorials.data?.map((tutorial) => (
-                <Link href={`tutorials/${tutorial.slug}`} key={tutorial.id}>
+                <Link
+                  href={`tutorials/${tutorial.slug}`}
+                  key={tutorial.id}
+                  legacyBehavior
+                >
                   <a className="w-72 sm:w-[31%] aspect-video">
                     <FeatureCard video_id={tutorial.video_id} />
                   </a>
@@ -58,14 +62,12 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-4 my-8">
               {guides.data?.map((guide) => (
                 <Link href={`guides/${guide.slug}`} key={guide.id}>
-                  <a>
-                    <Card
-                      image={guide.champion.image_url}
-                      title={guide.title}
-                      date={guide.updated_at}
-                      items={guide.items}
-                    />
-                  </a>
+                  <Card
+                    image={guide.champion.image_url}
+                    title={guide.title}
+                    date={guide.updated_at}
+                    items={guide.items}
+                  />
                 </Link>
               ))}
             </div>

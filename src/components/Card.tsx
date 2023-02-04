@@ -24,7 +24,7 @@ export function Card({ image, date, title, items }: Props) {
   }
 
   return (
-    <div className="w-[300px] p-2 bg-gradient-to-b from-cyan-900 to-slate-900 rounded-md flex items-center gap-2 cursor-pointer hover:outline hover:outline-1 hover:outline-rose-600">
+    <div className="p-2 bg-gradient-to-b from-cyan-900 to-slate-900 rounded-md flex items-center gap-2 cursor-pointer hover:outline hover:outline-1 hover:outline-rose-600">
       <img src={image} alt="" className="w-20" />
       <div>
         <span className="mb-2 text-sm font-semibold text-gray-100">

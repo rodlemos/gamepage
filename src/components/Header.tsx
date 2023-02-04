@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="relative w-full bg-gradient-to-r from-gray-700 to-slate-700 px-4 py-3 shadow-sm shadow-gray-700 z-10">
       <div className="mx-auto flex justify-between items-center max-w-screen-xl">
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior>
           <a className="flex items-center">
             <Image
               src={logo}
@@ -31,7 +31,7 @@ export function Header() {
           <nav className="absolute flex items-center justify-center md:inline-block w-full md:w-auto py-1 md:p-0 top-[65px] left-0 md:static bg-slate-600 md:bg-transparent">
             <ul className="flex gap-4">
               <li>
-                <Link href="/" passHref>
+                <Link href="/" passHref legacyBehavior>
                   <a
                     className={`text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300 ${
                       pathname === '/champions' && 'text-rose-500'
@@ -42,7 +42,7 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/guides" passHref>
+                <Link href="/guides" passHref legacyBehavior>
                   <a
                     className={`text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300 ${
                       pathname === '/guides' && 'text-rose-500'
@@ -53,7 +53,7 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/tutorials" passHref>
+                <Link href="/tutorials" passHref legacyBehavior>
                   <a
                     className={`text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300 ${
                       pathname === '/tutorials' && 'text-rose-500'
