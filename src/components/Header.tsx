@@ -32,7 +32,11 @@ export function Header() {
           <nav className="absolute flex items-center justify-center md:inline-block w-full md:w-auto py-1 md:p-0 top-[65px] left-0 md:static bg-slate-600 md:bg-transparent">
             <ul className="flex gap-4">
               <li>
-                <Link href="/" passHref legacyBehavior>
+                <Link
+                  href="https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki"
+                  passHref
+                  legacyBehavior
+                >
                   <a
                     className={`text-sm font-bold text-gray-300 hover:text-rose-500 trasition-colors ease-linear duration-300 ${
                       pathname === '/champions' && 'text-rose-500'
