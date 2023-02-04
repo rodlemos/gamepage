@@ -1,7 +1,7 @@
 # Game page project
 
-**This is a under construction personal project.**  
-The goal of this project is to learn how to use Tailwind CSS.
+Front-End project using Tailwind CSS 
+The goal of this project is to learn how to use Tailwind CSS for styling in React with Next.js.
 
 ## Getting Started
 
